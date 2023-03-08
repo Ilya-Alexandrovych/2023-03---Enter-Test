@@ -27,7 +27,7 @@ func main() {
 		input_text, _ = bufio.NewReader(os.Stdin).ReadString('\n')
 
 		cleared_input_text := strings.ReplaceAll(input_text, " ", "")
-		cleared_input_text = cleared_input_text[:len(cleared_input_text)-1]
+		//cleared_input_text = cleared_input_text[:len(cleared_input_text)-1]
 
 		separator_check := strings.Contains(input_text, "+")
 		if separator_check == true {
@@ -65,11 +65,11 @@ func main() {
 		sliced_text_part1, sliced_text_part2 = sliced_text[0], sliced_text[1]
 
 		argument1 = map_arabic[sliced_text_part1]
-		argument2 = map_arabic[sliced_text_part2[:len(sliced_text_part2)-1]]
+		argument2 = map_arabic[sliced_text_part2] //[:len(sliced_text_part2)-1]]
 
 		if argument1*argument2 == 0 {
 			argument1 = map_roman_to_arabic[sliced_text_part1]
-			argument2 = map_roman_to_arabic[sliced_text_part2[:len(sliced_text_part2)-1]]
+			argument2 = map_roman_to_arabic[sliced_text_part2] //[:len(sliced_text_part2)-1]]
 
 			roman_indicator = 1
 		}
